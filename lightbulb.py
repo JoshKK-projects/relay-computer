@@ -1,6 +1,8 @@
-class lightbulb:
+import clock
+class Lightbulb:
 	def __init__(self, power = 0):
 		self.power = 0
+		self.output = 0
 	def setOutput(self):
 		if self.power == 1:
 			print 1

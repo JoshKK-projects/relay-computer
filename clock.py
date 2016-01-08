@@ -1,13 +1,12 @@
-class clock:
+class Clock:
 	tasksThisCycle = []
 	tasksNextCycle = []
-	@staticmethod
-	def runCycle():
-		for task in tasksThisCycle:
-			task.setOutput()
-			method = getattr(task, 'output', None)
-			if method != None
-				tasksNextCycle.append(task.output)
-		tasksThisCycle = tasksNextCycle
-		if len(tasksThisCycle) != 0
-			runCycle()
+	@classmethod
+	def runCycle(cls):
+		while cls.tasksThisCycle :
+			for task in cls.tasksThisCycle:
+				task.setOutput()
+				cls.tasksThisCycle.remove(task)
+				if(task.output != 0):
+					cls.tasksNextCycle.append(task.output)
+			cls.tasksThisCycle = cls.tasksNextCycle
