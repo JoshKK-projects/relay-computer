@@ -7,15 +7,18 @@ class ToggleSwitch:
 		if self.output is not None:
 			print '|| State: ' + str(self.output.gate) + ' ||'
 		else:
-			print '||State: unconnected ||'
+			print '|| State: unconnected ||'
 	def toggle(self):
-		toggle = raw_input('Toggle Gate(y/N)')
-		if toggle == 'y':
-			if self.output.gate > 0:
-				self.output.gate = 0
-			else:
-				self.output.gate = 1
-		toggle = raw_input('Run Cycle(y/N)')
-		if toggle == 'y':
-			Clock.tasksThisCycle.append(self.output)
-			Clock.runCycle()
+		if self.output is not None:
+			toggle = raw_input('Toggle Gate(y/N)')
+			if toggle == 'y':
+				if self.output.gate > 0:
+					self.output.gate = 0
+				else:
+					self.output.gate = 1
+			toggle = raw_input('Run Cycle(y/N)')
+			if toggle == 'y':
+				Clock.tasksThisCycle.append(self.output)
+				Clock.runCycle()
+		else:
+			print 'Unconnected, cannot toggle'
