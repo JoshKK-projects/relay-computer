@@ -4,7 +4,10 @@ class ToggleSwitch:
 		self.output = output
 		Switchboard.allSwitches.append(self)
 	def display(self):
-		print '|| State: ' + str(self.output.gate) + ' ||'
+		if self.output is not None:
+			print '|| State: ' + str(self.output.gate) + ' ||'
+		else:
+			print '||State: unconnected ||'
 	def toggle(self):
 		toggle = raw_input('Toggle Gate(y/N)')
 		if toggle == 'y':
