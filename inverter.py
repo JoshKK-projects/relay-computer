@@ -1,5 +1,5 @@
 class Inverter:
-	def __init__(self,power = 1, output = None, outputType = None):
+	def __init__(self,power = 1, output = None, outputType = None, name = None):
 		self.power = power
 		self.output = output
 		self.outputType = outputType

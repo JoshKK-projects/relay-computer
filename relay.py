@@ -1,6 +1,6 @@
 import clock
 class Relay:
-	def __init__(self, power = 0, gate = 0, output = None, outputType = None):
+	def __init__(self, power = 0, gate = 0, output = None, outputType = None, name = None):
 		self.power = power
 		self.gate = gate
 		self.output = output
