@@ -1,17 +1,20 @@
 import clock
 class Relay:
-	def __init__(self, power = 0, gate = 0, output = None, outputType = None, name = None):
+	def __init__(self, power = 0, gate = 0, output = None, outputType = None, name = None, programInput = False):
 		self.power = power
 		self.gate = gate
 		self.output = output
+		self.name = name
 		self.outputType = outputType
+		if programInput:
+			Clock.taskInputs.append(self)
 	
 	def setOutput(self):
 		if self.power == 1 and self.gate == 1:
 			onOff = 1
 		else:
 			onOff = 0
-
+		print self.name	+ ' sent output ' + str(onOff) + ' to ' + self.output.name
 		if self.outputType == 'gate':
 			self.output.setGate(onOff)
 		else:

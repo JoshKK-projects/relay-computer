@@ -1,14 +1,20 @@
 class Clock:
 	tasksThisCycle = []
 	tasksNextCycle = []
-	@classmethod
+	taskInputs = []#not being properly saved between runs - loosing stuff, this is isssuueee
+	@classmethod	#also not calling all inputs properly e.g. XOR OR
 	def runCycle(cls):
-		while cls.tasksThisCycle :
+		cls.tasksThisCycle = cls.taskInputs
+		print 'initial relays:'
+		for task in cls.tasksThisCycle:
+			print task.name
+		while cls.tasksThisCycle:
 			for task in cls.tasksThisCycle:
-				print "clock set outout of " + str(task.name)
 				task.setOutput()
-				cls.tasksThisCycle.remove(task)
+				taskInputsHolder = cls.taskInputs
+				cls.tasksThisCycle.remove(task)#whatever this removes seems to be gone everywhere in the class ref?????
+				taskInputs = taskInputsHolder
 				if(task.output != 0):
 					cls.tasksNextCycle.append(task.output)
-				print "new cycle"
+			print "new cycle"
 			cls.tasksThisCycle = cls.tasksNextCycle

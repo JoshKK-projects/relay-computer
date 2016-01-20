@@ -9,7 +9,7 @@ class Inverter:
 			onOff = 0
 		else:
 			onOff = 1
-			
+		print self.name	+ ' sent output ' + str(onOff) + ' to ' + self.output.name
 		if self.outputType == 'gate':
 			self.output.setGate(onOff)
 		else:
