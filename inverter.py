@@ -5,16 +5,20 @@ class Inverter:
 		self.outputType = outputType
 	
 	def setOutput(self):
-		if self.power:
-			onOff = 0
-		else:
-			onOff = 1
+		onOff = self.state()
 		print self.name	+ ' sent output ' + str(onOff) + ' to ' + self.output.name
 		if self.outputType == 'gate':
 			self.output.setGate(onOff)
 		else:
 			self.output.setPower(onOff)
+		return onOff
 
 	
 	def setPower(self, onOff):
 		self.power = onOff
+
+	def state(self):
+		if self.power == 1:
+			return 0
+		else:
+			return 1

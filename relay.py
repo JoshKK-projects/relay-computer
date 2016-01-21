@@ -10,15 +10,14 @@ class Relay:
 			Clock.taskInputs.append(self)
 	
 	def setOutput(self):
-		if self.power == 1 and self.gate == 1:
-			onOff = 1
-		else:
-			onOff = 0
+		onOff = self.state()
+		
 		print self.name	+ ' sent output ' + str(onOff) + ' to ' + self.output.name
 		if self.outputType == 'gate':
 			self.output.setGate(onOff)
 		else:
 			self.output.setPower(onOff)
+		return onOff
 
 	def setGate(self, onOff):
 		self.gate = onOff
@@ -27,3 +26,9 @@ class Relay:
 	def setPower(self, onOff):
 		self.power = onOff
 
+	def state(self):
+		if self.power == 1 and self.gate == 1:
+			onOff = 1
+		else:
+			onOff = 0
+		return onOff

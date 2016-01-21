@@ -4,6 +4,7 @@ class Lightbulb:
 		self.power = 0
 		self.output = 0
 		self.name = name
+
 	def setOutput(self):
 		if self.power == 1:
 			print 1
@@ -12,3 +13,6 @@ class Lightbulb:
 
 	def setPower(self, onOff):
 		self.power = onOff
+
+	def state(self):
+		return self.power

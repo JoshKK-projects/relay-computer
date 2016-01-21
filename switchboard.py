@@ -5,7 +5,7 @@ class Switchboard:
 	@classmethod
 	def printSwitchBoard(cls):
 		for key in cls.asignedSwitches:
-			if cls.asignedSwitches[key] is not None:
+			if cls.asignedSwitches[key] is not None:#addjust for each switch takes an array
 				print "{{ " + key + " " + cls.asignedSwitches[key].display() + " }}"
 			
 	@classmethod

@@ -1,11 +1,11 @@
 b = Lightbulb()
-######AND TESTING
+#####AND TESTING
 # a2 = AND2(b,'power')
 # t1 = ToggleSwitch([a2.input1])
 # t2 = ToggleSwitch([a2.input2])
 # a2.r1.name = 'AND R1'
 # a2.r2.name = 'AND R2'
-# #######
+#######
 
 
 
