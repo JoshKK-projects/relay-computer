@@ -12,7 +12,7 @@ class Relay:
 	def setOutput(self):
 		onOff = self.state()
 		
-		print self.name	+ ' sent output ' + str(onOff) + ' to ' + self.output.name
+		print self.name	+ ' with power ' + str(self.power) + ' and gate ' + str(self.gate) + ' sent output ' + str(onOff) + ' to ' + self.output.name
 		if self.outputType == 'gate':
 			self.output.setGate(onOff)
 		else:

@@ -35,5 +35,5 @@ print xor.na2.i.name + ' connected to ' + xor.na2.i.output.name
 
 print xor.a2.r1.name + ' connected to ' + xor.a2.r1.output.name
 print xor.a2.r2.name + ' connected to ' + xor.a2.r2.output.name
-# ##############
+##############
 Switchboard.assignKeys()

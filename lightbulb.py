@@ -4,12 +4,13 @@ class Lightbulb:
 		self.power = 0
 		self.output = 0
 		self.name = name
+		self.outputType = 'power'
 
 	def setOutput(self):
 		if self.power == 1:
-			print 1
+			print 'BULB 1'
 		else:
-			print 0
+			print 'BULB 0'
 
 	def setPower(self, onOff):
 		self.power = onOff
