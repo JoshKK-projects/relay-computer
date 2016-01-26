@@ -1,5 +1,10 @@
-b = Lightbulb()
+b1 = Lightbulb(0,'BULB1')
+b2 = Lightbulb(0,'BUBL2')
+adder = HalfAdder(b1, 'power', b2, 'power')
+t1 = ToggleSwitch(adder.input1)
+t2 = ToggleSwitch(adder.input2)
 #####AND TESTING
+# b = Lightbulb()
 # a2 = AND2(b,'power')
 # t1 = ToggleSwitch([a2.input1])
 # t2 = ToggleSwitch([a2.input2])
@@ -12,9 +17,10 @@ b = Lightbulb()
 
 
 ######XOR TESTING
-xnor = XNOR2(b,'power')
-t1 = ToggleSwitch(xnor.input1)
-t2 = ToggleSwitch(xnor.input2)
+#b1 = Lightbulb(0,'BULB1')
+#xnor = XNOR2(b,'power')
+#t1 = ToggleSwitch(xnor.input1)
+#t2 = ToggleSwitch(xnor.input2)
 
 # xor.o2.r1.name = 'XOR OR r1' 
 # xor.o2.r2.name = 'XOR OR r2'
@@ -35,5 +41,5 @@ t2 = ToggleSwitch(xnor.input2)
 
 # print xor.a2.r1.name + ' connected to ' + xor.a2.r1.output.name
 # print xor.a2.r2.name + ' connected to ' + xor.a2.r2.output.name
-##############
+#############
 Switchboard.assignKeys()
