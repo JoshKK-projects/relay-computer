@@ -1,8 +1,32 @@
-b1 = Lightbulb(0,'BULB1')
-b2 = Lightbulb(0,'BUBL2')
+# b1 = Lightbulb(0,'CARRY')
+# b2 = Lightbulb(0,'SUM')
+# o2 = OR2(b1, 'power');
+# ha1 = HalfAdder(o2.input1,'gate',b2,'power')
+# ha2 = HalfAdder(o2.input2,'gate',ha1.input1,'gate')
+# t1 = ToggleSwitch(ha1.input2)
+# t2 = ToggleSwitch(ha2.input1)
+# t3 = ToggleSwitch(ha2.input2)
+# print t1.output
+# print t2.output
+# print t3.output
+
+# adder = FullAdder(b1, 'power', b2, 'power')
+# t1 = ToggleSwitch(adder.adder1.input1)
+# t2 = ToggleSwitch(adder.adder2.input1)
+# t3 = ToggleSwitch(adder.adder2.input2)
+# print adder.input1
+# print adder.input2
+# print adder.input3
+####HALF ADDER TESTING
+b1 = Lightbulb(0,'CARRY')
+b2 = Lightbulb(0,'SUM')
 adder = HalfAdder(b1, 'power', b2, 'power')
+print adder.input1
+print adder.input2
 t1 = ToggleSwitch(adder.input1)
 t2 = ToggleSwitch(adder.input2)
+#########
+
 #####AND TESTING
 # b = Lightbulb()
 # a2 = AND2(b,'power')

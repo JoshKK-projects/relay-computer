@@ -8,8 +8,10 @@ class Lightbulb:
 
 	def setOutput(self):
 		if self.power == 1:
+			Clock.finalOutput[self.name] = 1
 			print self.name + ' 1'
 		else:
+			Clock.finalOutput[self.name] = 0
 			print  self.name + ' 0'
 
 	def setPower(self, onOff):

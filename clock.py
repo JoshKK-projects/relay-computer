@@ -4,6 +4,7 @@ class Clock:
 	taskInputs = []
 	toggledGateTasks = []
 	toggledPowerTasks = []
+	finalOutput = {}
 	@classmethod	#if youve turned it on, you cant turn it off until next cycle
 	def runCycle(cls):
 		print "new program"
@@ -44,3 +45,5 @@ class Clock:
 			cls.tasksNextCycle = []
 			cls.toggledGateTasks = []
 			cls.toggledPowerTasks = []
+		print cls.finalOutput
+
