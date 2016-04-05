@@ -37,16 +37,19 @@ class Clock:
 		if task.output not in cls.toggledGateTasks and task.outputType == 'gate':#if toggle on power or gate, cant toggle on other, need seperate, ugh
 			task.setOutput()
 			if not isinstance(task.output, int):
-				#print task.output.name + ' added to next tasks'
-				if(task.output.gate == 1):
-					cls.toggledGateTasks.append(task.output) 
-				cls.tasksNextCycle.append(task.output)
+				for outputs in task.output:
+					if not isinstance(outputs, int):
+						#print task.output.name + ' added to next tasks'
+						if(outputs.gate == 1):
+							cls.toggledGateTasks.append(outputs) 
+						cls.tasksNextCycle.append(outputs)
 		if task.output not in cls.toggledPowerTasks and task.outputType == 'power':
 			task.setOutput()
 			if not isinstance(task.output, int):
-				#print task.output.name + ' added to next tasks'
-				if(task.output.power == 1):
-					cls.toggledPowerTasks.append(task.output) 
-				cls.tasksNextCycle.append(task.output)
+				for outputs in task.output:
+					if not isinstance(outputs, int):
+						if(outputs.power == 1):
+							cls.toggledPowerTasks.append(outputs) 
+						cls.tasksNextCycle.append(outputs)
 		# if(task.output != 0):
 		# 	cls.tasksNextCycle.append(task.output)

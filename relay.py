@@ -3,7 +3,7 @@ class Relay:
 	def __init__(self, power = 0, gate = 0, output = None, outputType = None, name = 'relay', programInput = False):
 		self.power = power
 		self.gate = gate
-		self.output = output
+		self.output = [output]
 		self.name = name
 		self.outputType = outputType
 		if programInput:
@@ -11,12 +11,12 @@ class Relay:
 	
 	def setOutput(self):
 		onOff = self.state()
-		print self.output
-		print self.name	+ ' with power ' + str(self.power) + ' and gate ' + str(self.gate) + ' sent output ' + str(onOff) + ' to ' + self.output.name
 		if self.outputType == 'gate':
-			self.output.setGate(onOff)
+			for out in self.output:
+				out.setGate(onOff)
 		else:
-			self.output.setPower(onOff)
+			for out in self.output:
+				out.setPower(onOff)
 		return onOff
 
 	def setGate(self, onOff):

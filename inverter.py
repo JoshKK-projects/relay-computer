@@ -1,17 +1,18 @@
 class Inverter:
 	def __init__(self,power = 1, output = None, outputType = None, name = 'inverter'):
 		self.power = power
-		self.output = output
+		self.output = [output]
 		self.outputType = outputType
 		self.name = name
 	
 	def setOutput(self):
 		onOff = self.state()
-		print self.name	+ ' sent output ' + str(onOff) + ' to ' + self.output.name
 		if self.outputType == 'gate':
-			self.output.setGate(onOff)
+			for out in self.output:
+				out.setGate(onOff)
 		else:
-			self.output.setPower(onOff)
+			for out in self.output:
+				out.setPower(onOff)
 		return onOff
 
 	
